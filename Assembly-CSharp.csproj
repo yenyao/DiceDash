@@ -36,11 +36,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\WinCondition.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GameManagement.cs" />
-     <Compile Include="Assets\Scripts\WinCondition.cs" />
      <Compile Include="Assets\Scripts\TimerClass.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Spawn.cs" />
+     <Compile Include="Assets\Scripts\FlagSpawn.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -683,8 +686,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+        <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+        <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -727,6 +736,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+        <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>D:\own_time\game_dev\Unity\DiceGame\Dice game\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>

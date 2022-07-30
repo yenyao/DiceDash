@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _rollSpeed = 0.8f;
+    public GameObject TileMap;
     private bool _isMoving;
     // index:
     // 0: side facing down
@@ -15,7 +16,15 @@ public class PlayerMovement : MonoBehaviour
     // 4: back
     // 5: top
     private KeyCode[] sideVal = {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6};
-    void Start() {  
+    private float startXPos;
+    private float startYPos;
+    private float startZPos;
+    void Start() {
+        startXPos = TileMap.transform.GetChild(0).transform.position.x;
+        startYPos = TileMap.transform.GetChild(0).transform.position.y;
+        startZPos = TileMap.transform.GetChild(0).transform.position.z;
+        transform.position = new Vector3(startXPos, startYPos + 1, startZPos);
+
         MapRight();
         MapTop();
         MapForward();

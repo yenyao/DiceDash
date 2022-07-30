@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class WinCondition : MonoBehaviour
 {
-    public GameObject TimeObj;
+    public GameObject gameManager;
+    
     void OnTriggerEnter(Collider other) {
         if(other.tag == "Player") {
-            TimeObj.GetComponent<TimerClass>().Finish();
+            gameManager.GetComponent<TimerClass>().Finish();
+            gameObject.transform.parent.Find("Confetti").GetComponent<ParticleSystem>().Play();
         }
     }
 }
