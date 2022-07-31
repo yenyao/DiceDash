@@ -356,6 +356,8 @@
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/FlagSpawn.cs"
 "Assets/Scripts/GameManagement.cs"
+"Assets/Scripts/GameOver.cs"
+"Assets/Scripts/LoseCondition.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/TimerClass.cs"
