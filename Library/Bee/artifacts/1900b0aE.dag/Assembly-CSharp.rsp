@@ -355,7 +355,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/FlagSpawn.cs"
-"Assets/Scripts/GameManagement.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GameOver.cs"
 "Assets/Scripts/LoseCondition.cs"
 "Assets/Scripts/MainMenu.cs"

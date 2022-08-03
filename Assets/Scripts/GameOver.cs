@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public void PlayGame() {
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            SceneManager.LoadScene(1);
+    float restartDelay = 0.4f;
+    public void Restart() {
+        Invoke("reloadScene", restartDelay);
     }
     public void QuitGame() {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    void reloadScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
