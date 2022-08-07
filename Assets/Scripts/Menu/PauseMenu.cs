@@ -6,10 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    private MenuService menuService = new MenuService();
+    
     private static bool isPaused = false;
     public GameObject pauseMenuUI;
     private float restartDelay = 0.4f;
+    private MenuService menuService;
+    void Start() {
+        menuService = gameObject.AddComponent(typeof(MenuService)) as MenuService;
+        pauseMenuUI.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {

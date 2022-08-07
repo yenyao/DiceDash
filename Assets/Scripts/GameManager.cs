@@ -2,23 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
-    bool hasGameEnded = false;
+    bool _isGameOver = false;
+    public TextMeshProUGUI playTimerText;
     public float restartDelay = 1f;
-    public PlayerMovement PlayerMovement;
-    public GameObject GameOverUI;
-    public void EndGame() {
-        if(!hasGameEnded)
+    private ScoreService scoreService;
+    private float endTime;
+    void Start() {
+        scoreService = gameObject.AddComponent(typeof(ScoreService)) as ScoreService;
+    }
+    void Update() {
+        if(_isGameOver) return;
+        endTime = timeTaken();
+
+        string elapsedTime = scoreService.formatTime(endTime);
+
+        playTimerText.text = elapsedTime;
+    }
+    float timeTaken() {
+        return Time.timeSinceLevelLoad * 1000;
+    }
+
+    public void endGame() {
+        if(!_isGameOver)
         {
-            hasGameEnded = true;
-            GameOverUI.SetActive(true);
-            Invoke("FreezePlayer", restartDelay);
+            _isGameOver = true;
         }
     }
 
-    void FreezePlayer() {
-        PlayerMovement.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+    public float getEndTime() {
+        return endTime;
+    }
+
+    public void win() {
+        float highScore = scoreService.getHighScore();
+        _isGameOver = true;
+        playTimerText.color = Color.yellow;
+        if (endTime < highScore || highScore == 0f) {
+            scoreService.setHighScore(endTime);
+        }
+        endTime = 0f;
+    }
+    public void lose() {
+        _isGameOver = true;
+        float highScore = scoreService.getHighScore();
+        playTimerText.color = Color.yellow;
+        endTime = 0f;
     }
 }

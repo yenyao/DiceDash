@@ -128,4 +128,9 @@ public class PlayerMovement : MonoBehaviour
         }
         _isMoving = false;
     }
+
+    public void FreezePlayer() {
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+        // PlayerMovement.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+    }
 }
