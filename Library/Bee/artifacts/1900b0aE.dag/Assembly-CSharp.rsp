@@ -364,8 +364,8 @@
 "Assets/Scripts/Menu/WinMenu.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/ScoreService.cs"
+"Assets/Scripts/Spawn.cs"
 "Assets/Scripts/WinCondition.cs"
-"Assets/Spawn.cs"
 -langversion:9.0
 
 /deterministic

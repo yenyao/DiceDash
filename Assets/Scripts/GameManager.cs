@@ -40,15 +40,16 @@ public class GameManager : MonoBehaviour
         float highScore = scoreService.getHighScore();
         _isGameOver = true;
         playTimerText.color = Color.yellow;
+        scoreService.setIsHighScore(0);
         if (endTime < highScore || highScore == 0f) {
             scoreService.setHighScore(endTime);
+            scoreService.setIsHighScore(1);
         }
-        endTime = 0f;
+            // scoreService.setHighScore(99999);
     }
     public void lose() {
         _isGameOver = true;
         float highScore = scoreService.getHighScore();
         playTimerText.color = Color.yellow;
-        endTime = 0f;
     }
 }

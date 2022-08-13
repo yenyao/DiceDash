@@ -13,11 +13,13 @@ public class WinMenu : MonoBehaviour
     private MenuService menuService;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public GameObject PBIcon;
     private ScoreService scoreService;
     private float restartDelay = 0.4f;
     void Start() {
         menuService = gameObject.AddComponent(typeof(MenuService)) as MenuService;
         scoreService = gameObject.AddComponent(typeof(ScoreService)) as ScoreService;
+        PBIcon.SetActive(false);
     }
     public void NextLevel() {
         menuService.NextLevel();
@@ -40,5 +42,8 @@ public class WinMenu : MonoBehaviour
         // float highScore = 99999;
         float highScore = highScoreTime;
         highScoreText.text = scoreService.formatTime(highScore);
+    }
+    public void activatePBIcon() {
+        PBIcon.SetActive(true);
     }
 }
